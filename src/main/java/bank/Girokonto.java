@@ -5,6 +5,7 @@ public class Girokonto {
     private double kontostand;
     private double kredit;
 
+    // Konstruktor für das Girokonto, prüft ob der Kredit negativ ist
     public Girokonto(String kontonummer, double kontostand, double kredit) {
         if (kredit < 0) {
             throw new IllegalArgumentException("Kredit darf nicht negativ sein.");
@@ -13,6 +14,7 @@ public class Girokonto {
         this.kontostand = kontostand;
         this.kredit = kredit;
     }
+    // Getter-Methoden für die Attribute
     public String getKontonummer() {
         return kontonummer;
     }
@@ -23,6 +25,7 @@ public class Girokonto {
         return kredit;
     }
 
+    // Abhebung eines Betrags, prüft, ob der Betrag innerhalb des Limits (Kontostand + Kredit) liegt
     public boolean abheben(double betrag) {
         if (betrag < 0) {
             throw new IllegalArgumentException("Betrag darf nicht negativ sein.");
@@ -33,6 +36,8 @@ public class Girokonto {
         }
         return false;
     }
+
+    // Einzahlung eines Betrags auf das Konto
     public void einzahlen(double betrag) {
         if (betrag < 0) {
             throw new IllegalArgumentException("Einzahlbetrag darf nicht negativ sein.");
