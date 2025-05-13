@@ -5,7 +5,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ParameterizedTestExample {
+class ParameterizedExampleTest {
     // Parameterized Test mit JUnit 5
     @ParameterizedTest
     @ValueSource(ints = {4, 2, 3})
